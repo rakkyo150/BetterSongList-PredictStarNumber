@@ -69,6 +69,12 @@
     <Reference Include="Hive.Versioning">
       <HintPath>$(BeatSaberDir)\Libs\Hive.Versioning.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Beat Saber\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Polyglot">
       <HintPath>$(BeatSaberDir)\Beat Saber_Data\Managed\Polyglot.dll</HintPath>
     </Reference>
@@ -83,6 +89,7 @@
     </Reference>
     <Reference Include="System"></Reference>
     <Reference Include="System.Core"></Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq"></Reference>
     <Reference Include="System.Data.DataSetExtensions"></Reference>
     <Reference Include="System.Data"></Reference>

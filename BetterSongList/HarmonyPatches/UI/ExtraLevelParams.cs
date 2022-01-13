@@ -89,7 +89,7 @@ namespace BetterSongList.HarmonyPatches.UI {
 				if(!SongDetailsUtil.isAvailable) {
 					fields[0].text = fields[1].text = "N/A";
 				} else if(SongDetailsUtil.songDetails != null) {
-					void wrapper() {
+					async void wrapper() {
 						// For now we can assume non-standard diff is unranked. Probably not changing any time soon i guess
 						var ch = (SongDetailsCache.Structs.MapCharacteristic)BeatmapsUtil.GetCharacteristicFromDifficulty(____selectedDifficultyBeatmap);
 
@@ -108,7 +108,18 @@ namespace BetterSongList.HarmonyPatches.UI {
 							) {
 								fields[0].text = fields[1].text = "?";
 							} else if(!diff.ranked) {
-								fields[0].text = fields[1].text = "-";
+								try
+								{
+									fields[0].text = "-";
+									fields[1].text = "...";
+									string predictedStarNumber = await PredictStarNumberUtil.PredictStarNumberApi(mh, diff.difficulty);
+									fields[1].text = $"({predictedStarNumber})";
+								} 
+								catch(Exception ex)
+								{
+									Plugin.Log.Error(ex);
+									fields[0].text = fields[1].text = "-";
+								}
 							} else {
 								var acc = .984f - (Math.Max(0, (diff.stars - 1.5f) / (14f - 1.5f) / Config.Instance.AccuracyMultiplier) * .027f);
 								//acc *= 1 - ((1 - Config.Instance.AccuracyMultiplier) * 0.5f);
