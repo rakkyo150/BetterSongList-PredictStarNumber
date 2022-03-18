@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace BetterSongList.SortModels {
-	public class BasicSongDetailsSorterWithLegend : ISorterWithLegend, ISorterPrimitive, IAvailabilityCheck {
+	public class BasicSongDetailsSorterWithLegend : ISorterWithLegend, ISorterPrimitive, Interfaces.IAvailabilityCheck {
 		public bool isReady => SongDetailsUtil.finishedInitAttempt;
 
 #nullable enable

@@ -88,7 +88,7 @@ namespace BetterSongList.UI {
 				selected = sortOptions.Keys.Last();
 
 			var newSort = sortOptions[selected];
-			var unavReason = (newSort as IAvailabilityCheck)?.GetUnavailabilityReason();
+			var unavReason = (newSort as Interfaces.IAvailabilityCheck)?.GetUnavailabilityReason();
 
 			if(unavReason != null) {
 				persistentNuts?.ShowErrorASAP($"Can't sort by {selected} - {unavReason}");
@@ -119,7 +119,7 @@ namespace BetterSongList.UI {
 				selected = filterOptions.Keys.Last();
 
 			var newFilter = filterOptions[selected];
-			var unavReason = (newFilter as IAvailabilityCheck)?.GetUnavailabilityReason();
+			var unavReason = (newFilter as Interfaces.IAvailabilityCheck)?.GetUnavailabilityReason();
 
 			if(unavReason != null) {
 				persistentNuts?.ShowErrorASAP($"Can't filter by {selected} - {unavReason}");

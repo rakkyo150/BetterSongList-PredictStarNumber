@@ -37,9 +37,9 @@ namespace BetterSongList.Util {
 
 			if(builtinPacks.ContainsKey(packName)) {
 				return builtinPacks[packName];
-			} else if(hasPlaylistLib) {
+			} else {
 				IBeatmapLevelPack wrapper() {
-					foreach(var x in BeatSaberPlaylistsLib.PlaylistManager.DefaultManager.GetAllPlaylists()) {
+					foreach(var x in SongCore.Loader.BeatmapLevelsModelSO.customLevelPackCollection.beatmapLevelPacks) {
 						if(x.packName == packName)
 							return x;
 					}
@@ -47,7 +47,6 @@ namespace BetterSongList.Util {
 				}
 				return wrapper();
 			}
-			return null;
 		}
 
 		public static bool IsCollection(IAnnotatedBeatmapLevelCollection levelCollection) {
