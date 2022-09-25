@@ -1,3 +1,5 @@
+## Please use [this](https://github.com/rakkyo150/PredictStarNumberMod) from now on
+
 ## 日本語版READMEは[こちら](README.md)
 
 # BetterSongList + PredictStarNumber

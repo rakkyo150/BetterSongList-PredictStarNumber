@@ -1,3 +1,5 @@
+## 今後は[こちら](https://github.com/rakkyo150/PredictStarNumberMod)を使用してください
+
 ## The English version of README is [here](README_en.md)
 
 # BetterSongList + PredictStarNumber
